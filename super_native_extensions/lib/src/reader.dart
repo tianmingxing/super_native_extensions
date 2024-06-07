@@ -142,6 +142,9 @@ abstract class VirtualFile {
   /// Returns total length if available.
   int? get length;
 
+  /// Returns the absolute file path or `null` if not available.
+  String? get filePath;
+
   /// Reads next chunk of the data. Returns empty list when all data has been read.
   Future<Uint8List> readNext();
 
