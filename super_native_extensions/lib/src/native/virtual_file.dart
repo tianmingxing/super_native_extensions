@@ -31,6 +31,9 @@ class VirtualFileFromFile extends VirtualFile {
   int? get length => file.existsSync() ? file.lengthSync() : null;
 
   @override
+  String? get filePath => file.path;
+
+  @override
   Future<Uint8List> readNext() async {
     _file ??= await file.open();
     return _file!.read(1024 * 256);
